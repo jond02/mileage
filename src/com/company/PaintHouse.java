@@ -21,28 +21,23 @@ public class PaintHouse {
         double length, width, height, windowHeight, windowWidth, doorHeight, doorWidth, surface;
         int nWindows, nDoors, gallons;
 
-        System.out.println("House length:");
+        System.out.println("House length, width, and height of the house:");
         length = in.nextDouble();
-        System.out.println("House width:");
         width = in.nextDouble();
-        System.out.println("House height:");
         height = in.nextDouble();
-        System.out.println("Window height:");
+        System.out.println("Window height and width:");
         windowHeight = in.nextDouble();
-        System.out.println("Window width:");
         windowWidth = in.nextDouble();
-        System.out.println("Door width:");
+        System.out.println("Door width and height:");
         doorWidth = in.nextDouble();
-        System.out.println("Door height:");
         doorHeight = in.nextDouble();
-        System.out.println("Number of windows:");
+        System.out.println("Number of windows and the number of doors:");
         nWindows = in.nextInt();
-        System.out.println("Number of doors:");
         nDoors = in.nextInt();
 
-        surface = (height * width + 2) + (height * length + 2);
-        surface -= (doorHeight * doorWidth) * nDoors;
-        surface -= (windowHeight * windowWidth) * nWindows;
+        surface = (height * width * 2) + (height * length * 2);
+        surface -= doorHeight * doorWidth * nDoors;
+        surface -= windowHeight * windowWidth * nWindows;
 
         System.out.printf("Surface area is %5.2f\n", surface);
 
